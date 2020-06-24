@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Glowimg checkbox</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+*{
+    margin:0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    width: 100vw;
+    background: #18191f ;
+    
+}
+
+ul{
+    display: flex;
+    position: relative;
+}
+ 
+li{
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
+}
+
+
+input{
+    opacity: 0;
+    position:absolute;
+    cursor: pointer;
+}
+
+ .icon{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background: #18191f ;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 26px;
+   
+
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: -1px -1px 4px rgba(255,255,255,0.05),
+                1px 1px 4px rgba(0,0,0,0.2),
+                inset 1px 1px 1px rgba(0,0,0,0.05),
+                inset -1px -1px 4px rgba(255,255,255,0.05);
+}
+.icon::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 2px;
+    left: 2px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    background: rgba(255,255,255,0.05);
+}
+
+input:checked ~ .icon{
+    box-shadow : inset 0px 0px 2px rgba(255,255,255,0.05),
+                inset 4px 4px 6px rgba(0,0,0,0.2);
+
+}
+input:checked ~ .icon .fa{
+    color : #00f3ff;
+    text-shadow: 0 0 15px #00f3ff,
+                0 0 25px #00f3ff;
+    animation: animate 5s linear infinite;
+    }
+
+    @keyframes animate {
+
+        0%{
+            filter: hue-rotate(0deg);
+        }
+
+        100%{
+            filter: hue-rotate(360deg);
+        }
+        
+    }
+
+    .instruct h3{
+        color: whitesmoke;
+        text-align: center;
+    }
+    </style>
+    
+</head>
+<body>
+<div class = "instruct">
+    <h3>Touch the icon to make it glow</h3>
+    <ul>
+        <li>
+            <label>
+                <input type ='checkbox'></input>
+               <div class ="icon"><i class="fa fa-gift" aria-hidden="true"></i></div>
+            </label>
+        </li>
+
+        <li>
+            <label>
+                <input type="checkbox"></input>
+               <div class ="icon"><i class="fa fa-glass" aria-hidden="true"></i></div>
+            </label>
+        </li>
+
+        <li>
+            <label>
+                <input type ='checkbox'></input>
+               <div class ="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+            </label>
+        </li>
+
+        <li>
+            <label>
+                <input type ='checkbox'></input>
+               <div class ="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+            </label>
+        </li>
+
+        <li>
+            <label>
+                <input type ='checkbox'></input>
+               <div class ="icon"><i class="fa fa-heart" aria-hidden="true"></i></div>
+            </label>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
